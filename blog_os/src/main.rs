@@ -5,14 +5,14 @@
 
 use core::panic::PanicInfo;
 
-//関数名をマングルしないように指示
-#[no_mangle]
-pub extern "C" fn _start() -> ! {
-    loop{}
-}
-
 //パニックハンドラーの実装
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
     loop {}
+}
+
+//関数名をマングルしないように指示(名前修飾をしない)
+#[no_mangle]
+pub extern "C" fn _start() -> ! {
+    loop{}
 }
