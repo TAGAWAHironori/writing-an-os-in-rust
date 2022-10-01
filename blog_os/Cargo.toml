@@ -6,3 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+# panicで中止するための設定
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
